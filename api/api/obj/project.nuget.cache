@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Iv3A1ZI2E8I=",
+  "success": true,
+  "projectFilePath": "/Users/anna/projects/futuremap/api/api/api.csproj",
+  "expectedPackageFiles": [
+    "/Users/anna/.nuget/packages/microsoft.aspnetcore.openapi/10.0.8/microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "/Users/anna/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512",
+    "/Users/anna/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
