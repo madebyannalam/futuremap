@@ -1,6 +1,6 @@
 namespace api.Modules.SinkingFunds.Models;
 
-public class SinkingFundAllocationResponse
+public class SimulationResponse
 {
     //
 }

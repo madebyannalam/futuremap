@@ -13,7 +13,7 @@ public static class SinkingFundsApi
         group.MapPost("/allocations", GetAllocations);
     }
 
-    private static async Task<IResult> GetAllocations(ISinkingFundsService service, SinkingFundAllocationRequest request)
+    private static async Task<IResult> GetAllocations(ISinkingFundsService service, SimulationRequest request)
     {
         var result = await service.GetAllocations(request);
         return result.ToResult();

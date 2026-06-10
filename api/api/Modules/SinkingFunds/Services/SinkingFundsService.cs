@@ -6,9 +6,9 @@ namespace api.Modules.SinkingFunds.Services;
 
 public class SinkingFundsService : ISinkingFundsService
 {
-    public async Task<OperationResult<IList<SinkingFundAllocationResponse>>> GetAllocations(SinkingFundAllocationRequest request)
+    public async Task<OperationResult<IList<SimulationResponse>>> GetAllocations(SimulationRequest request)
     {
-        var result = new OperationResult<IList<SinkingFundAllocationResponse>>();
+        var result = new OperationResult<IList<SimulationResponse>>();
         return await Task.FromResult(result);
     }
 }

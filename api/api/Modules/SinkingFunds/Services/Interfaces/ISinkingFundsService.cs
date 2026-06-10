@@ -5,5 +5,5 @@ namespace api.Modules.SinkingFunds.Services.Interfaces;
 
 public interface ISinkingFundsService
 {
-    Task<OperationResult<IList<SinkingFundAllocationResponse>>> GetAllocations(SinkingFundAllocationRequest request);
+    Task<OperationResult<IList<SimulationResponse>>> GetAllocations(SimulationRequest request);
 }
