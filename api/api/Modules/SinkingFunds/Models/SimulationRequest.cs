@@ -2,7 +2,8 @@ namespace api.Modules.SinkingFunds.Models;
 
 public class SimulationRequest
 {
-    public decimal Surplus { get; set; }
-    public bool VarySurplus { get; set; } =  false;
+    public decimal AveragePoolAmount { get; set; }
+    public bool VaryPoolAmount { get; set; } =  false;
+    public AllocationStrategyEnum AllocationStrategy { get; set; }
     public IList<SinkingFundRequest> Funds { get; set; } = new List<SinkingFundRequest>();
 }

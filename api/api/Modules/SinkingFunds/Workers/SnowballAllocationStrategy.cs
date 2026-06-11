@@ -5,7 +5,7 @@ namespace api.Modules.SinkingFunds.Workers;
 
 internal class SnowballAllocationStrategy : IAllocationStrategy
 {
-    public void Allocate(AllocationContext context)
+    public void Allocate(SimulationRequest request)
     {
         throw new NotImplementedException();
     }

@@ -1,6 +1,0 @@
-namespace api.Modules.SinkingFunds.Models;
-
-public class AllocationContext
-{
-    
-}

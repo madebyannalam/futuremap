@@ -4,5 +4,5 @@ namespace api.Modules.SinkingFunds.Workers.Interfaces;
 
 public interface IAllocationStrategy
 {
-    void Allocate(AllocationContext context);
+    void Allocate(SimulationRequest request);
 }
