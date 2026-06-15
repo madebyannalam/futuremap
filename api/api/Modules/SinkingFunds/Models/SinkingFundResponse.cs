@@ -6,5 +6,5 @@ public class SinkingFundResponse
     public decimal FinalSavings { get; set; }
     public decimal Target { get; set; }
     public int MonthCompleted { get; set; }
-    public bool Completed { get; set; }
+    public bool Completed => FinalSavings >= Target;
 }
