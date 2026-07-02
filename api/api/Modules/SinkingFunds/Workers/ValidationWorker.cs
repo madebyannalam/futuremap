@@ -8,10 +8,29 @@ internal class ValidationWorker : IValidationWorker
 {
     public OperationResult Validate(SimulationRequest request)
     {
-        var result = new OperationResult();
+        if (!request.Funds.Any())
+        {
+            return OperationResult.Failure(OperationStatusEnum.ValidationError, new List<ValidationError>
+            {
+                new()
+                {
+                    PropertyPath = "Funds",
+                    Message = "At least one fund is required."
+                }
+            });
+        }
         
-        // At least 1 sinking fund must be specified
-        // The average pool amount is not required
+        if (request.AveragePoolAmount == 0)
+        {
+            return OperationResult.Failure(OperationStatusEnum.ValidationError, new List<ValidationError>
+            {
+                new()
+                {
+                    PropertyPath = "AveragePoolAmount",
+                    Message = "The average pool amount must be greater than zero."
+                }
+            });
+        }
         // Each sinking fund must:
         //  Have a description/name
         //  Have a target amount
@@ -21,6 +40,11 @@ internal class ValidationWorker : IValidationWorker
         // Only 1 fund can be named as the dumping ground. If only 1 fund is set up, it IS the dumping ground.
         //  E.g. You're modelling the savings for a home deposit
         
-        return result;
+        foreach (var fund in request.Funds)
+        {
+            //
+        }
+        
+        return OperationResult.Success();
     }
 }

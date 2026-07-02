@@ -6,6 +6,8 @@ public class OperationResult
     
     public string? ErrorMessage { get; init; }
     
+    public IReadOnlyCollection<ValidationError> Errors { get; init; } = new List<ValidationError>();
+    
     public bool IsSuccess => Status == OperationStatusEnum.Success;
 
     public static OperationResult Success() => new()
@@ -13,11 +15,14 @@ public class OperationResult
         Status = OperationStatusEnum.Success
     };
 
-    public static OperationResult Failure(OperationStatusEnum status, string errorMessage) => new()
+    public static OperationResult Failure(OperationStatusEnum status, IEnumerable<ValidationError> errors)
     {
-        Status = status,
-        ErrorMessage = errorMessage
-    };
+        return new()
+        {
+            Status = status,
+            Errors = errors.ToList()
+        };
+    }
 }
 
 public class OperationResult<T> : OperationResult
@@ -30,9 +35,12 @@ public class OperationResult<T> : OperationResult
         Data = data
     };
 
-    public new static OperationResult<T> Failure(OperationStatusEnum status, string errorMessage) => new()
+    public new static OperationResult<T> Failure(OperationStatusEnum status, IEnumerable<ValidationError> errors)
     {
-        Status = status,
-        ErrorMessage = errorMessage
-    };
+        return new()
+        {
+            Status = status,
+            Errors = errors.ToList()
+        };
+    }
 }
