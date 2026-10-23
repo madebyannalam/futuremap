@@ -4,6 +4,6 @@ public class SimulationResponse
 {
     public int MonthsToComplete { get; set; }
     public decimal TotalAllocated { get; set; }
-    public IList<SinkingFundResponse> SinkingFunds { get; set; } = new List<SinkingFundResponse>();
+    public IList<SinkingFundResponse> SinkingFunds { get; init; } = new List<SinkingFundResponse>();
     public bool AllCompleted => SinkingFunds.All(sf => sf.Completed);
 }

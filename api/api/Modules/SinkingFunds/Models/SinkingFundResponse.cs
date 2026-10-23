@@ -5,9 +5,9 @@ public class SinkingFundResponse
     public string Description { get; set; } = string.Empty;
     public decimal FinalSavings { get; set; }
     public decimal Target { get; init; }
-    public decimal BaseAllocation { get; set; }
+    public decimal BaseAllocation { get; init; }
     public DateTime Deadline { get; set; }
-    public int PoolPriority { get; set; }
+    public int PoolPriority { get; init; }
     public FundRoleEnum Role { get; init; }
     public int MonthCompleted { get; set; }
     public bool Completed => FinalSavings >= Target;

@@ -31,11 +31,8 @@ internal class SimulationWorker : ISimulationWorker
             
             // Give the $1s and cents to the dumping ground
             var dumpingGround = result.SinkingFunds.SingleOrDefault(f => f.Role == FundRoleEnum.DumpingGround);
-            if (dumpingGround != null)
-            {
-                dumpingGround.FinalSavings += request.AveragePoolAmount % 10;
-            }
-            
+            dumpingGround?.FinalSavings += request.AveragePoolAmount % 10;
+
             // Get the list of completed funds and give their base allocations to the pool
             // These should be the funds that were completed in prior months
             averagePoolAmount += result.SinkingFunds.Where(f => f.Completed).Sum(f => f.BaseAllocation);
